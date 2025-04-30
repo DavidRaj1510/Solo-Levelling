@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 30% 10%;
+    --foreground: 260 10% 90%;
+
+    --card: 260 30% 15%;
+    --card-foreground: 260 10% 98%;
+
+    --popover: 260 30% 12%;
+    --popover-foreground: 260 10% 98%;
+
+    --primary: 260 70% 60%;
+    --primary-foreground: 260 10% 98%;
+
+    --secondary: 260 20% 20%;
+    --secondary-foreground: 260 10% 98%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 260 10% 70%;
+
+    --accent: 260 30% 30%;
+    --accent-foreground: 260 10% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 260 10% 98%;
+
+    --border: 260 20% 30%;
+    --input: 260 20% 30%;
+    --ring: 260 70% 60%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-solo-dark-bg text-foreground overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .solo-glow {
+    @apply relative after:absolute after:inset-0 after:bg-purple-glow after:opacity-50 after:blur-md after:z-[-1];
+  }
+
+  .nav-link {
+    @apply relative text-white opacity-80 hover:opacity-100 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-solo-purple after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left;
+  }
+
+  .solo-card {
+    @apply bg-solo-dark-purple/80 border border-solo-purple/20 rounded-lg p-5 backdrop-blur-sm shadow-lg relative overflow-hidden;
+  }
+
+  .solo-card::before {
+    content: "";
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-solo-purple to-solo-blue-glow;
+  }
+
+  .solo-button {
+    @apply bg-solo-purple hover:bg-solo-purple/90 text-white py-2 px-6 rounded-md transition-all duration-300 relative overflow-hidden shadow-[0_0_10px_rgba(139,92,246,0.5)];
+  }
+  
+  .solo-button::after {
+    content: "";
+    @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+  }
+  
+  .solo-button:hover::after {
+    @apply opacity-20;
+  }
+  
+  .rank-badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r;
+  }
+  
+  .rank-e {
+    @apply from-gray-600 to-gray-500;
+  }
+  
+  .rank-d {
+    @apply from-green-700 to-green-600;
+  }
+  
+  .rank-c {
+    @apply from-blue-700 to-blue-600;
+  }
+  
+  .rank-b {
+    @apply from-purple-700 to-purple-600;
+  }
+  
+  .rank-a {
+    @apply from-red-700 to-red-500;
+  }
+  
+  .rank-s {
+    @apply from-amber-600 to-yellow-500;
+  }
+  
+  .rank-monarch {
+    @apply from-solo-purple to-solo-blue-glow;
+  }
+}
