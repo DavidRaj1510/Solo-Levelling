@@ -4,7 +4,7 @@ A **gamified productivity app** where users complete tasks, level up, and stay m
 
 > Built using **React + TypeScript + Supabase + OpenAI**, deployed via **GitHub Pages**.
 
-🌐 **Live Demo:** [Click to Visit](https://your-username.github.io/Solo-Levelling/)
+🌐 **Live Demo:** [Click to Visit](https://davidraj1510.github.io/Solo-Levelling/)
 
 ---
 
